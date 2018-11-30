@@ -19,7 +19,7 @@ public class Gui extends Application {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("gui.fxml"));
         Scene scene = new Scene(root, 500, 350);
 
-        primaryStage.setTitle("Hello World Application");
+        primaryStage.setTitle("Climify Emulator");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
