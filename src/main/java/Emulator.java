@@ -7,8 +7,12 @@ import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 public class Emulator {
 
     public static void main(String[] args) {
+        setData(14);
+    }
+
+    public static void setData(int inputData) {
         String topic = "TempData";
-        String content = "Sensor2,building=\"101\" Temperature=3,batterylvl=12";
+        String content = "Sensor2,building=\"101\"" + " Temperature=" + inputData + ",batterylvl=12";
         int qos = 2;
         String broker = "tcp://se2-webapp04.compute.dtu.dk:1883";
         String clientId = "339";
