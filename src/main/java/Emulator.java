@@ -32,12 +32,7 @@ public class Emulator {
             System.out.println("Disconnected");
             System.exit(0);
         } catch (MqttException me) {
-            System.out.println("reason " + me.getReasonCode());
-            System.out.println("msg " + me.getMessage());
-            System.out.println("loc " + me.getLocalizedMessage());
-            System.out.println("cause " + me.getCause());
-            System.out.println("excep " + me);
-            me.printStackTrace();
+            printErrorMessages(me);
         }
     }
 
@@ -66,12 +61,16 @@ public class Emulator {
 
 
         } catch (MqttException me) {
-            System.out.println("reason " + me.getReasonCode());
-            System.out.println("msg " + me.getMessage());
-            System.out.println("loc " + me.getLocalizedMessage());
-            System.out.println("cause " + me.getCause());
-            System.out.println("excep " + me);
-            me.printStackTrace();
+            printErrorMessages(me);
         }
+    }
+
+    public static void printErrorMessages(MqttException me) {
+        System.out.println("reason " + me.getReasonCode());
+        System.out.println("msg " + me.getMessage());
+        System.out.println("loc " + me.getLocalizedMessage());
+        System.out.println("cause " + me.getCause());
+        System.out.println("excep " + me);
+        me.printStackTrace();
     }
 }
