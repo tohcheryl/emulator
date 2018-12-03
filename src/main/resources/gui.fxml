@@ -28,7 +28,7 @@
             <Label prefHeight="17.0" prefWidth="173.0" text="Current Temperature" GridPane.rowIndex="1" />
             <Label text="12" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
             <TextField fx:id="tempField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button fx:id="setTempButton" onAction="#handleSetTempButtonAction" mnemonicParsing="false" text="Set" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Button fx:id="setTempButton" mnemonicParsing="false" onAction="#handleSetTempButtonAction" text="Set" GridPane.columnIndex="2" GridPane.rowIndex="2" />
             <Label text="Set temperature to" GridPane.rowIndex="2" />
          </children>
       </GridPane>
