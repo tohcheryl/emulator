@@ -26,7 +26,7 @@
             <TextField fx:id="idField" GridPane.columnIndex="1" />
             <Button mnemonicParsing="false" text="Register" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
             <Label prefHeight="17.0" prefWidth="173.0" text="Current Temperature" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-            <Label text="?" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <Label fx:id="CurrentTemp" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
             <TextField fx:id="tempField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Button fx:id="setTempButton" mnemonicParsing="false" onAction="#handleSetTempButtonAction" text="Set" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
             <Label text="Set temperature to" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
