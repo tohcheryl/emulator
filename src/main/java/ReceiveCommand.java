@@ -6,6 +6,7 @@ public class ReceiveCommand {
     public static void main(String... args) {
         receiveData();
     }
+
     public static void receiveData() {
         String topic = "TempData";
         int qos = 2;
@@ -17,13 +18,15 @@ public class ReceiveCommand {
             MqttConnectOptions connOpts = new MqttConnectOptions();
             connOpts.setCleanSession(true);
             sampleClient.setCallback(new MqttCallback() {
-                public void connectionLost(Throwable cause) {}
+                public void connectionLost(Throwable cause) {
+                }
 
                 public void messageArrived(String topic, MqttMessage message) throws Exception {
-
                     System.out.println("Message received: " + message.toString());
                 }
-                public void deliveryComplete(IMqttDeliveryToken token) {}
+
+                public void deliveryComplete(IMqttDeliveryToken token) {
+                }
             });
 
             System.out.println("Connecting to broker: " + broker);
