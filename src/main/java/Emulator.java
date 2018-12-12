@@ -1,10 +1,18 @@
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
+
+import java.io.IOException;
 
 public class Emulator {
 
     public static void main(String[] args) {
-        setData(7);
+        registerPi("000000012a34");
+        //setData(7);
     }
 
     public static void setData(int inputData) {
@@ -32,6 +40,23 @@ public class Emulator {
             //System.exit(0);
         } catch (MqttException me) {
             printErrorMessages(me);
+        }
+    }
+
+    public static void registerPi(String uuid) {
+        HttpClient httpClient = HttpClientBuilder.create().build();
+        String json = "{\"UUID\":\"" + uuid + "\"}";
+        System.out.println(json);
+        try {
+            String api = "http://se2-webapp04.compute.dtu.dk/api/api-post-rpi.php";
+            HttpPost request = new HttpPost(api);
+            StringEntity entity = new StringEntity(json);
+            request.setEntity(entity);
+            request.setHeader("Content-Type", "application/json");
+            HttpResponse response = httpClient.execute(request);
+            System.out.println(response.getStatusLine().getStatusCode());
+        } catch (IOException io) {
+            io.printStackTrace();
         }
     }
 
