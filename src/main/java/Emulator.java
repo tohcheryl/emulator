@@ -11,7 +11,8 @@ import java.io.IOException;
 public class Emulator {
 
     public static void main(String[] args) {
-        registerPi("000000012a34");
+        String regID = "000000012a34";
+        registerPi("regID");
         //setData(7);
     }
 
