@@ -4,10 +4,10 @@ import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 public class Emulator {
 
     public static void main(String[] args) {
-        setData(7);
+        //setData(7);
     }
 
-    public static void setData(int inputData) {
+    public static void setData(int parameter,String inputData) {
         String topic = "TempData";
         String content = "Sensor2,building=\"101\"" + " Temperature=" + inputData + ",batterylvl=12";
         int qos = 2;
@@ -22,11 +22,25 @@ public class Emulator {
             System.out.println("Connecting to broker: " + broker);
             sampleClient.connect(connOpts);
             System.out.println("Connected");
+
+            if(parameter == 0){
+                content = "Sensor2,building=\"101\"" + " Temperature=" + inputData + ",batterylvl=12";
+            }
+
+            if(parameter == 1){
+                content = "Sensor2,building=\"101\"" + "CarbonDioxide=" + inputData + ",batterylvl=12";
+            }
+
+            if(parameter == 2){
+                content = "Sensor2,building=\"101\"" + " Window=" + inputData + ",batterylvl=12";
+            }
             System.out.println("Publishing message: " + content);
             MqttMessage message = new MqttMessage(content.getBytes());
             message.setQos(qos);
             sampleClient.publish(topic, message);
             System.out.println("Message published");
+            sampleClient.disconnect();
+
             //sampleClient.disconnect();
             //System.out.println("Disconnected");
             //System.exit(0);

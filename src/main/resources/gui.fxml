@@ -27,20 +27,23 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
             </rowConstraints>
             <children>
-                <Label prefHeight="17.0" prefWidth="82.0" text="Current Status" GridPane.halignment="CENTER"
-                       GridPane.rowIndex="3" GridPane.valignment="CENTER"/>
+
                 <Label text="Temperature" GridPane.columnIndex="1" GridPane.halignment="CENTER"
                        GridPane.valignment="CENTER"/>
                 <Label text="CO2" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
                 <Label text="Window" GridPane.columnIndex="3" GridPane.halignment="CENTER"
                        GridPane.valignment="CENTER"/>
                 <Label text="ID" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER"/>
+                <Label text="Set to" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER"/>
+
+
                 <TextField fx:id="tempId" prefHeight="25.0" prefWidth="80.0" GridPane.columnIndex="1"
                            GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER"/>
                 <TextField fx:id="carbonDioxideId" GridPane.columnIndex="2" GridPane.halignment="CENTER"
                            GridPane.rowIndex="1" GridPane.valignment="CENTER"/>
                 <TextField fx:id="windowId" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1"
                            GridPane.valignment="CENTER"/>
+
                 <Button fx:id="registerButton" mnemonicParsing="false" text="Register" GridPane.columnIndex="4"
                         GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER"/>
                 <Label fx:id="currentTemp" text="" GridPane.columnIndex="1" GridPane.halignment="CENTER"
@@ -49,14 +52,6 @@
                        GridPane.rowIndex="3" GridPane.valignment="CENTER"/>
                 <Label fx:id="currentWindow" text="" GridPane.columnIndex="3" GridPane.halignment="CENTER"
                        GridPane.rowIndex="3" GridPane.valignment="CENTER"/>
-                <Label text="Set to" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER"/>
-                <TextField fx:id="carbonDioxideField" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
-                <TextField fx:id="windowField" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
-                <TextField fx:id="tempField" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2"
-                           GridPane.valignment="CENTER"/>
-                <Button fx:id="setButton" mnemonicParsing="false" onAction="#handleSetButtonAction" text="Set"
-                        GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2"
-                        GridPane.valignment="CENTER"/>
 
             </children>
         </GridPane>
