@@ -8,11 +8,11 @@ import java.util.UUID;
 
 public class Emulator {
 
+    private final static String uuid = generateUuid();
+
     public static void main(String[] args) {
-        String uniqueID = UUID.randomUUID().toString();
-        System.out.println(uniqueID);
         String regID = "phew";
-        registerPi(uniqueID);
+        registerPi(uuid);
         //setData(7);
     }
 
@@ -58,6 +58,12 @@ public class Emulator {
         }
     }
 
+    public static String generateUuid() {
+        String uniqueId = UUID.randomUUID().toString();
+        String uuid = uniqueId.substring(0, Math.min(uniqueId.length(), 30));
+        return uuid;
+    }
+
     public static void registerPi(String uuid) {
         OkHttpClient client = new OkHttpClient();
 
@@ -78,16 +84,6 @@ public class Emulator {
         }
     }
 
-    private static String convertStreamToString(InputStream is) throws Exception {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-        StringBuilder sb = new StringBuilder();
-        String line = null;
-        while ((line = reader.readLine()) != null) {
-            sb.append(line);
-        }
-        is.close();
-        return sb.toString();
-    }
 
     public static void printErrorMessages(MqttException me) {
         System.out.println("reason " + me.getReasonCode());
