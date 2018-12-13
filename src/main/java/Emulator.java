@@ -12,7 +12,9 @@ public class Emulator {
 
     public static void main(String[] args) {
         String regID = "phew";
-        registerPi(uuid);
+        registerPi(regID);
+        receiveData(regID);
+        //setData(0, "98");
         //setData(7);
     }
 
@@ -34,6 +36,7 @@ public class Emulator {
 
             if (parameter == 0) {
                 content = "Sensor2,building=\"101\"" + " Temperature=" + inputData + ",batterylvl=12";
+                //content = content + ",uuid=phew";
             }
 
             if (parameter == 1) {
@@ -53,6 +56,37 @@ public class Emulator {
             //sampleClient.disconnect();
             //System.out.println("Disconnected");
             //System.exit(0);
+        } catch (MqttException me) {
+            printErrorMessages(me);
+        }
+    }
+
+    public static void receiveData(String uuid) {
+        String topic = uuid + "/#";
+        int qos = 2;
+        String broker = "tcp://se2-webapp04.compute.dtu.dk:1883";
+        String clientId = "24";
+        MemoryPersistence persistence = new MemoryPersistence();
+        try {
+            MqttClient client = new MqttClient(broker, clientId, persistence);
+            MqttConnectOptions connOpts = new MqttConnectOptions();
+            connOpts.setCleanSession(true);
+            client.setCallback(new MqttCallback() {
+                public void connectionLost(Throwable cause) {
+                }
+
+                public void messageArrived(String topic, MqttMessage message) throws Exception {
+                    System.out.println("Message received: " + message.toString());
+                }
+
+                public void deliveryComplete(IMqttDeliveryToken token) {
+                }
+            });
+
+            System.out.println("Connecting to broker: " + broker);
+            client.connect(connOpts);
+            client.subscribe(topic, qos);
+
         } catch (MqttException me) {
             printErrorMessages(me);
         }
