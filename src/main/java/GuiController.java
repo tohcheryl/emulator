@@ -8,34 +8,47 @@ public class GuiController {
     int tempToSet;
     int carbonDioxideToSet;
     String windowStatusToSet;
+
+    String IDtemp;
+    String IDco2;
+    String IDwindow;
+
+    //1. row
     @FXML
-    private TextField idField;
+    public TextField tempId;
+    @FXML
+    public TextField carbonDioxideId;
+    @FXML
+    public TextField windowId;
 
     //2. row
     @FXML
-    public static  TextField tempField;
-
+    public Label currenttempID;
     @FXML
-    public static  TextField carbonDioxideField;
-
+    public Label currentcarbonDioxideID;
     @FXML
-    public static  TextField windowField;
-
+    public Label currentwindowID;
 
     //3. row
     @FXML
-    public static Label currentTemp;
+    public TextField tempField;
 
     @FXML
-    public static  Label currentCarbonDioxide;
+    public TextField carbonDioxideField;
 
     @FXML
-    public static  Label currentWindow;
+    public  TextField windowField;
 
 
+    //4. row
+    @FXML
+    public Label currentTemp;
 
     @FXML
-    public static  Button setTempButton;
+    public  Label currentCarbonDioxide;
+
+    @FXML
+    public  Label currentWindow;
 
     @FXML
     protected void handleSetButtonAction(ActionEvent event) {
@@ -62,18 +75,55 @@ public class GuiController {
             }
         return;
     }
+    public void handleRegButtonAction(ActionEvent actionEvent) {
+        try {
+            IDtemp = tempId.getText();
+            System.out.println(IDtemp + "::" + tempId);
+            setcurrenttempID(IDtemp);
+        }catch (Exception e) {
+            System.out.println("Exception occurred");
+        }
+        try {
+            IDco2 = carbonDioxideId.getText();
+            setcurrentcarbonDioxideID(IDco2);
+        }catch (Exception e) {
+            System.out.println("Exception occurred");
+        }
+        try {
+            IDwindow = windowId.getText();
+            setcurrentwindowID(IDwindow);
+        }catch (Exception e) {
+            System.out.println("Exception occurred");
+        }
+        return;
+    }
 
-    public static void setTemp(int temp) {
+
+    public void setTemp(int temp) {
         currentTemp.setText((Integer.toString(temp)));
     }
 
-    public static void setCarbonDioxide(int carbonDioxideLevel) {
+    public void setCarbonDioxide(int carbonDioxideLevel) {
         currentCarbonDioxide.setText(Integer.toString(carbonDioxideLevel));
     }
 
-    public static void setWindow(String status) {
+    public void setWindow(String status) {
         currentWindow.setText(status);
     }
+
+
+
+    public void setcurrenttempID(String status) {
+        currenttempID.setText(status);
+    }
+    public void setcurrentcarbonDioxideID(String status) {
+        currentcarbonDioxideID.setText(status);
+    }
+    public void setcurrentwindowID(String status) {
+        currentwindowID.setText(status);
+    }
+
+
 
 
 }
