@@ -1,22 +1,22 @@
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.HttpClientBuilder;
+import okhttp3.*;
+
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
-import java.io.IOException;
+import java.io.*;
+import java.util.UUID;
 
 public class Emulator {
 
     public static void main(String[] args) {
-        String regID = "000000012a34";
-        registerPi("regID");
+        String uniqueID = UUID.randomUUID().toString();
+        System.out.println(uniqueID);
+        String regID = "phew";
+        registerPi(uniqueID);
         //setData(7);
     }
 
-    public static void setData(int parameter,String inputData) {
+    public static void setData(int parameter, String inputData) {
         String topic = "TempData";
         String content = "Sensor2,building=\"101\"" + " Temperature=" + inputData + ",batterylvl=12";
         int qos = 2;
@@ -32,15 +32,15 @@ public class Emulator {
             sampleClient.connect(connOpts);
             System.out.println("Connected");
 
-            if(parameter == 0){
+            if (parameter == 0) {
                 content = "Sensor2,building=\"101\"" + " Temperature=" + inputData + ",batterylvl=12";
             }
 
-            if(parameter == 1){
+            if (parameter == 1) {
                 content = "Sensor2,building=\"101\"" + "CarbonDioxide=" + inputData + ",batterylvl=12";
             }
 
-            if(parameter == 2){
+            if (parameter == 2) {
                 content = "Sensor2,building=\"101\"" + " Window=" + inputData + ",batterylvl=12";
             }
             System.out.println("Publishing message: " + content);
@@ -59,20 +59,34 @@ public class Emulator {
     }
 
     public static void registerPi(String uuid) {
-        HttpClient httpClient = HttpClientBuilder.create().build();
-        String json = "{\"UUID\":\"" + uuid + "\"}";
-        System.out.println(json);
+        OkHttpClient client = new OkHttpClient();
+
+        MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
+        String requestBodyString = "UUID=" + uuid + "&undefined=";
+        RequestBody body = RequestBody.create(mediaType, requestBodyString);
+        Request request = new Request.Builder()
+                .url("http://se2-webapp04.compute.dtu.dk/api/api-post-rpi.php")
+                .post(body)
+                .addHeader("Content-Type", "application/x-www-form-urlencoded")
+                .addHeader("cache-control", "no-cache")
+                .build();
         try {
-            String api = "http://se2-webapp04.compute.dtu.dk/api/api-post-rpi.php";
-            HttpPost request = new HttpPost(api);
-            StringEntity entity = new StringEntity(json);
-            request.setEntity(entity);
-            request.setHeader("Content-Type", "application/json");
-            HttpResponse response = httpClient.execute(request);
-            System.out.println(response.getStatusLine().getStatusCode());
+            Response response = client.newCall(request).execute();
+            System.out.println(response.toString());
         } catch (IOException io) {
             io.printStackTrace();
         }
+    }
+
+    private static String convertStreamToString(InputStream is) throws Exception {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+        StringBuilder sb = new StringBuilder();
+        String line = null;
+        while ((line = reader.readLine()) != null) {
+            sb.append(line);
+        }
+        is.close();
+        return sb.toString();
     }
 
     public static void printErrorMessages(MqttException me) {
