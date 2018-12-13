@@ -22,6 +22,7 @@ public class Gui extends Application {
         primaryStage.setTitle("Climify Emulator");
         primaryStage.setScene(scene);
         primaryStage.show();
+        Emulator.receiveData("phew");
     }
 
     @Override

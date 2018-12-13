@@ -8,34 +8,34 @@ public class GuiController {
     int tempToSet;
     int carbonDioxideToSet;
     String windowStatusToSet;
+
     @FXML
     private TextField idField;
 
     //2. row
     @FXML
-    public static  TextField tempField;
+    public TextField tempField;
 
     @FXML
-    public static  TextField carbonDioxideField;
+    public TextField carbonDioxideField;
 
     @FXML
-    public static  TextField windowField;
+    public TextField windowField;
 
 
     //3. row
     @FXML
-    public static Label currentTemp;
+    public Label currentTemp;
 
     @FXML
-    public static  Label currentCarbonDioxide;
+    public Label currentCarbonDioxide;
 
     @FXML
-    public static  Label currentWindow;
-
+    public Label currentWindow;
 
 
     @FXML
-    public static  Button setTempButton;
+    public Button setTempButton;
 
     @FXML
     protected void handleSetButtonAction(ActionEvent event) {
@@ -43,35 +43,38 @@ public class GuiController {
             tempToSet = Integer.parseInt(tempField.getText());
             setTemp(tempToSet);
             Emulator.setData(0, Integer.toString(tempToSet));
-        }catch (Exception e) {
+        } catch (Exception e) {
             System.out.println("Exception occurred");
         }
         try {
             carbonDioxideToSet = Integer.parseInt(carbonDioxideField.getText());
             setCarbonDioxide(carbonDioxideToSet);
             Emulator.setData(1, Integer.toString(carbonDioxideToSet));
-        }catch (Exception e) {
+        } catch (Exception e) {
             System.out.println("Exception occurred");
         }
         try {
             windowStatusToSet = windowField.getText();
             setWindow(windowStatusToSet);
             Emulator.setData(2, windowStatusToSet);
-        }catch (Exception e) {
+        } catch (Exception e) {
             System.out.println("Exception occurred");
-            }
+        }
         return;
     }
 
-    public static void setTemp(int temp) {
+    public void setTemp(int temp) {
+        System.out.println("setting temperature");
+        System.out.println("temp: " + temp);
         currentTemp.setText((Integer.toString(temp)));
+        System.out.println("here");
     }
 
-    public static void setCarbonDioxide(int carbonDioxideLevel) {
+    public void setCarbonDioxide(int carbonDioxideLevel) {
         currentCarbonDioxide.setText(Integer.toString(carbonDioxideLevel));
     }
 
-    public static void setWindow(String status) {
+    public void setWindow(String status) {
         currentWindow.setText(status);
     }
 

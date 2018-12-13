@@ -4,16 +4,18 @@ import okhttp3.*;
 
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
+
 import java.io.*;
 import java.util.UUID;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
-
 
 
 public class Emulator {
 
     private final static String uuid = generateUuid();
+    private final static GuiController GUICONTROLLER = new GuiController();
 
     public static void main(String[] args) {
         String regID = "phew";
@@ -86,16 +88,19 @@ public class Emulator {
                     String m = message.toString();
                     JSONObject messageData = new JSONObject(m);
 
-                    String device =(String) messageData.get("device");
-                    String values =(String) messageData.get("values");
-                    if(device=="11"){
-                        GuiController.setTemp(Integer.parseInt(values));
+                    String device = (String) messageData.get("device");
+                    String values = (String) messageData.get("values");
+                    if (device.equals("11")) {
+                        System.out.println("Emulator is setting the temperature");
+                        System.out.println("values: " + values);
+                        GUICONTROLLER.setTemp(Integer.parseInt(values));
                     }
-                    if(device=="11"){
-                        GuiController.setCarbonDioxide(Integer.parseInt(values));
+                    if (device.equals("11")) {
+                        System.out.println("Emulator is setting CO2");
+                        GUICONTROLLER.setCarbonDioxide(Integer.parseInt(values));
                     }
-                    if(device=="11"){
-                        GuiController.setWindow(values);
+                    if (device.equals("11")) {
+                        GUICONTROLLER.setWindow(values);
                     }
                 }
 
