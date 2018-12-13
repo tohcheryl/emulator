@@ -9,8 +9,18 @@ public class GuiController {
     int carbonDioxideToSet;
     String windowStatusToSet;
 
+    String IDtemp;
+    String IDco2;
+    String IDwindow;
+
+    //1. row
     @FXML
-    private TextField idField;
+    public TextField tempId;
+
+    @FXML
+    public TextField carbonDioxideId;
+    @FXML
+    public TextField windowId;
 
     //2. row
     @FXML
@@ -33,6 +43,14 @@ public class GuiController {
     @FXML
     public Label currentWindow;
 
+    public Label currenttempID;
+    @FXML
+    public Label currentcarbonDioxideID;
+    @FXML
+    public Label currentwindowID;
+
+
+    //4. row
 
     @FXML
     public Button setTempButton;
@@ -62,6 +80,29 @@ public class GuiController {
         }
         return;
     }
+    public void handleRegButtonAction(ActionEvent actionEvent) {
+        try {
+            IDtemp = tempId.getText();
+            System.out.println(IDtemp + "::" + tempId);
+            setcurrenttempID(IDtemp);
+        }catch (Exception e) {
+            System.out.println("Exception occurred");
+        }
+        try {
+            IDco2 = carbonDioxideId.getText();
+            setcurrentcarbonDioxideID(IDco2);
+        }catch (Exception e) {
+            System.out.println("Exception occurred");
+        }
+        try {
+            IDwindow = windowId.getText();
+            setcurrentwindowID(IDwindow);
+        }catch (Exception e) {
+            System.out.println("Exception occurred");
+        }
+        return;
+    }
+
 
     public void setTemp(int temp) {
         System.out.println("setting temperature");
@@ -77,6 +118,20 @@ public class GuiController {
     public void setWindow(String status) {
         currentWindow.setText(status);
     }
+
+
+
+    public void setcurrenttempID(String status) {
+        currenttempID.setText(status);
+    }
+    public void setcurrentcarbonDioxideID(String status) {
+        currentcarbonDioxideID.setText(status);
+    }
+    public void setcurrentwindowID(String status) {
+        currentwindowID.setText(status);
+    }
+
+
 
 
 }
