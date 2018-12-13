@@ -40,7 +40,7 @@ public class Emulator {
             }
 
             if (parameter == 1) {
-                content = "Sensor2,building=\"101\"" + "CarbonDioxide=" + inputData + ",batterylvl=12";
+                content = "Sensor2,building=\"101\"" + " CO2=" + inputData + ",batterylvl=12";
             }
 
             if (parameter == 2) {

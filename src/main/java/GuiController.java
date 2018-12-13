@@ -39,22 +39,27 @@ public class GuiController {
 
     @FXML
     protected void handleSetButtonAction(ActionEvent event) {
-        if(tempField.getText()!= null){
+        try {
             tempToSet = Integer.parseInt(tempField.getText());
             setTemp(tempToSet);
-            Emulator.setData(0,Integer.toString(tempToSet));
+            Emulator.setData(0, Integer.toString(tempToSet));
+        }catch (Exception e) {
+            System.out.println("Exception occurred");
         }
-        if(carbonDioxideField.getText()!= null) {
+        try {
             carbonDioxideToSet = Integer.parseInt(carbonDioxideField.getText());
             setCarbonDioxide(carbonDioxideToSet);
-            Emulator.setData(1,Integer.toString(carbonDioxideToSet));
+            Emulator.setData(1, Integer.toString(carbonDioxideToSet));
+        }catch (Exception e) {
+            System.out.println("Exception occurred");
         }
-        if(windowField.getText()!= null) {
+        try {
             windowStatusToSet = windowField.getText();
             setWindow(windowStatusToSet);
-            Emulator.setData(2,windowStatusToSet);
-        }
-
+            Emulator.setData(2, windowStatusToSet);
+        }catch (Exception e) {
+            System.out.println("Exception occurred");
+            }
         return;
     }
 
