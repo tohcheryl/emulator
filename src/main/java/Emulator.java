@@ -1,10 +1,15 @@
+
+
 import okhttp3.*;
 
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
-
 import java.io.*;
 import java.util.UUID;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+
 
 public class Emulator {
 
@@ -67,6 +72,7 @@ public class Emulator {
         String broker = "tcp://se2-webapp04.compute.dtu.dk:1883";
         String clientId = "24";
         MemoryPersistence persistence = new MemoryPersistence();
+
         try {
             MqttClient client = new MqttClient(broker, clientId, persistence);
             MqttConnectOptions connOpts = new MqttConnectOptions();
@@ -77,6 +83,20 @@ public class Emulator {
 
                 public void messageArrived(String topic, MqttMessage message) throws Exception {
                     System.out.println("Message received: " + message.toString());
+                    String m = message.toString();
+                    JSONObject messageData = new JSONObject(m);
+
+                    String device =(String) messageData.get("device");
+                    String values =(String) messageData.get("values");
+                    if(device=="11"){
+                        GuiController.setTemp(Integer.parseInt(values));
+                    }
+                    if(device=="11"){
+                        GuiController.setCarbonDioxide(Integer.parseInt(values));
+                    }
+                    if(device=="11"){
+                        GuiController.setWindow(values);
+                    }
                 }
 
                 public void deliveryComplete(IMqttDeliveryToken token) {

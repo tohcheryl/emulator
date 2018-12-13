@@ -13,29 +13,29 @@ public class GuiController {
 
     //2. row
     @FXML
-    private TextField tempField;
+    public static  TextField tempField;
 
     @FXML
-    private TextField carbonDioxideField;
+    public static  TextField carbonDioxideField;
 
     @FXML
-    private TextField windowField;
+    public static  TextField windowField;
 
 
     //3. row
     @FXML
-    private Label currentTemp;
+    public static Label currentTemp;
 
     @FXML
-    private Label currentCarbonDioxide;
+    public static  Label currentCarbonDioxide;
 
     @FXML
-    private Label currentWindow;
+    public static  Label currentWindow;
 
 
 
     @FXML
-    private Button setTempButton;
+    public static  Button setTempButton;
 
     @FXML
     protected void handleSetButtonAction(ActionEvent event) {
@@ -63,15 +63,15 @@ public class GuiController {
         return;
     }
 
-    public void setTemp(int temp) {
+    public static void setTemp(int temp) {
         currentTemp.setText((Integer.toString(temp)));
     }
 
-    public void setCarbonDioxide(int carbonDioxideLevel) {
+    public static void setCarbonDioxide(int carbonDioxideLevel) {
         currentCarbonDioxide.setText(Integer.toString(carbonDioxideLevel));
     }
 
-    public void setWindow(String status) {
+    public static void setWindow(String status) {
         currentWindow.setText(status);
     }
 
