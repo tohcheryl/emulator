@@ -5,8 +5,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class GuiController {
-    String tempToSet;
-    String carbonDioxideToSet;
+    int tempToSet;
+    int carbonDioxideToSet;
     String windowStatusToSet;
 
     String IDtemp;
@@ -58,16 +58,16 @@ public class GuiController {
     @FXML
     protected void handleSetButtonAction(ActionEvent event) {
         try {
-            tempToSet = tempField.getText();
+            tempToSet = Integer.parseInt(tempField.getText());
             setTemp(tempToSet);
-            Emulator.setData(0, tempToSet);
+            Emulator.setData(0, Integer.toString(tempToSet));
         } catch (Exception e) {
             System.out.println("Exception occurred");
         }
         try {
-            carbonDioxideToSet = carbonDioxideField.getText();
+            carbonDioxideToSet = Integer.parseInt(carbonDioxideField.getText());
             setCarbonDioxide(carbonDioxideToSet);
-            Emulator.setData(1, carbonDioxideToSet);
+            Emulator.setData(1, Integer.toString(carbonDioxideToSet));
         } catch (Exception e) {
             System.out.println("Exception occurred");
         }
@@ -104,21 +104,15 @@ public class GuiController {
     }
 
 
-    public void setTemp(String temp) {
-        try {
-            System.out.println("setting temperature");
-            System.out.println("temp: " + temp);
-            tempToSet = temp;
-            currentTemp.setText(temp);
-            System.out.println("here");
-        }catch (Exception e) {
-            System.out.println(e);
-        }
-
+    public void setTemp(int temp) {
+        System.out.println("setting temperature");
+        System.out.println("temp: " + temp);
+        currentTemp.setText((Integer.toString(temp)));
+        System.out.println("here");
     }
 
-    public void setCarbonDioxide(String carbonDioxideLevel) {
-        currentCarbonDioxide.setText(carbonDioxideLevel);
+    public void setCarbonDioxide(int carbonDioxideLevel) {
+        currentCarbonDioxide.setText(Integer.toString(carbonDioxideLevel));
     }
 
     public void setWindow(String status) {
