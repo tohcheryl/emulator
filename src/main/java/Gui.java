@@ -29,6 +29,19 @@ public class Gui extends Application {
         primaryStage.show();
         emulator = new Emulator(guiController);
         emulator.receiveData(emulator.getUuid());
+
+        Runnable r = new Runnable() {
+            public void run() {
+                try {
+                    emulator.BackGround();
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+            }
+        };
+
+        new Thread(r).start();
+
     }
 
     @Override
@@ -39,5 +52,8 @@ public class Gui extends Application {
 
     public static void main(String[] args) {
         launch(args);
+
+
+
     }
 }

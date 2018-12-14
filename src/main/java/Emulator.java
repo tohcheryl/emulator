@@ -8,15 +8,16 @@ import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
 import java.io.*;
 import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
 import org.json.JSONObject;
 
 
 public class Emulator {
 
-    private static GuiController GUI_CONTROLLER;
-    private static String uuid;
-    private static String values;
+    public static GuiController GUI_CONTROLLER;
+    public static String uuid;
+    public static String values;
 
     public Emulator(GuiController guiControl) {
         GUI_CONTROLLER = guiControl;
@@ -33,9 +34,18 @@ public class Emulator {
     }
     */
 
+    public void BackGround() throws InterruptedException {
+        while(true){
+            TimeUnit.SECONDS.sleep(30);
+            GUI_CONTROLLER.handleSetButtonAction();
+
+        }
+
+    }
+
     public static void setData(int parameter, String inputData) {
         String topic = "TempData";
-        String content = "Sensor2,building=\"101\"" + " Temperature=" + inputData + ",batterylvl=12";
+        String content = "Sensor2,building=\"101\"" + " Temperature=" + inputData + ",batterylvl=12" + "uuid=" + uuid;
         int qos = 2;
         String broker = "tcp://se2-webapp04.compute.dtu.dk:1883";
         String clientId = "98";
