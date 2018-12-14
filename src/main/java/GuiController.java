@@ -16,28 +16,16 @@ public class GuiController {
     //1. row
     @FXML
     public TextField tempId;
-
     @FXML
     public TextField carbonDioxideId;
     @FXML
     public TextField windowId;
 
     //2. row
-
-
-    public Label currenttempID;
-    @FXML
-    public Label currentcarbonDioxideID;
-    @FXML
-    public Label currentwindowID;
-
-    //3. row
     @FXML
     public TextField tempField;
-
     @FXML
     public TextField carbonDioxideField;
-
     @FXML
     public TextField windowField;
 
@@ -47,68 +35,66 @@ public class GuiController {
         try {
             tempToSet = tempField.getText();
             setTemp(tempToSet);
-            Emulator.setData(0, tempToSet);
+            Emulator.setData("temp",tempToSet);
         } catch (Exception e) {
             System.out.println(e);
         }
         try {
             carbonDioxideToSet = carbonDioxideField.getText();
             setCarbonDioxide(carbonDioxideToSet);
-            Emulator.setData(1, carbonDioxideToSet);
+            Emulator.setData("CO2",carbonDioxideToSet);
         } catch (Exception e) {
             System.out.println(e);
         }
         try {
             windowStatusToSet = windowField.getText();
             setWindow(windowStatusToSet);
-            Emulator.setData(2, windowStatusToSet);
+            Emulator.setData("Window",windowStatusToSet);
         } catch (Exception e) {
             System.out.println(e);
         }
         return;
     }
+
+    @FXML
     public void handleRegButtonAction() {
         try {
             IDtemp = tempId.getText();
             System.out.println(IDtemp + "::" + tempId);
-            setcurrenttempID(IDtemp);
+            setTempID(IDtemp);
         }catch (Exception e) {
-            System.out.println("Exception occurred");
+            System.out.println(e);
         }
         try {
             IDco2 = carbonDioxideId.getText();
-            setcurrentcarbonDioxideID(IDco2);
+            setCarbonDioxideID(IDco2);
         }catch (Exception e) {
-            System.out.println("Exception occurred");
+            System.out.println(e);
         }
         try {
             IDwindow = windowId.getText();
-            setcurrentwindowID(IDwindow);
+            setWindowID(IDwindow);
         }catch (Exception e) {
-            System.out.println("Exception occurred");
+            System.out.println(e);
         }
         return;
     }
 
 
-    public void setTemp(String temp) {
+    public void setTemp(String status) {
         try {
             System.out.println("setting temperature");
-            //System.out.println("temp: " + temp);
-            //tempToSet = temp;
-            tempField.setText(temp);
-            //currentTemp.setText(temp);
-            //System.out.println("here");
+            tempField.setText(status);
         }catch (Exception e) {
             System.out.println(e);
         }
 
     }
 
-    public void setCarbonDioxide(String carbonDioxideLevel) {
+    public void setCarbonDioxide(String status) {
         try {
             System.out.println("setting carbonDioxideLevel");
-            carbonDioxideField.setText(carbonDioxideLevel);
+            carbonDioxideField.setText(status);
         }catch (Exception e) {
             System.out.println(e);
         }
@@ -126,14 +112,14 @@ public class GuiController {
     }
 
 
-    public void setcurrenttempID(String status) {
-        currenttempID.setText(status);
+    public void setTempID(String status) {
+        tempId.setText(status);
     }
-    public void setcurrentcarbonDioxideID(String status) {
-        currentcarbonDioxideID.setText(status);
+    public void setCarbonDioxideID(String status) {
+        carbonDioxideId.setText(status);
     }
-    public void setcurrentwindowID(String status) {
-        currentwindowID.setText(status);
+    public void setWindowID(String status) {
+        windowId.setText(status);
     }
 
 

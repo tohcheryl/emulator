@@ -39,9 +39,7 @@ public class Gui extends Application {
                 }
             }
         };
-
         new Thread(r).start();
-
     }
 
     @Override

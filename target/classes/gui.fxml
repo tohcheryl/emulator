@@ -47,15 +47,6 @@
 
 
 
-                <!--
-                <Label fx:id="currenttempID"            text="" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                <Label fx:id="currentcarbonDioxideID"   text="" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                <Label fx:id="currentwindowID"          text="" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-
-                <Label prefHeight="17.0" prefWidth="82.0" text="Current ID" GridPane.halignment="CENTER"
-                       GridPane.rowIndex="2" GridPane.valignment="CENTER"/>
-                -->
-
                 <Label text="Current Status" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER"/>
 
                 <TextField fx:id="tempField"            GridPane.columnIndex="1" GridPane.rowIndex="2" />

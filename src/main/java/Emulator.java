@@ -35,16 +35,15 @@ public class Emulator {
     */
 
     public void BackGround() throws InterruptedException {
-        while(true){
+        while (true) {
             TimeUnit.SECONDS.sleep(30);
             GUI_CONTROLLER.handleSetButtonAction();
-
         }
-
     }
 
-    public static void setData(int parameter, String inputData) {
+    public static void setData(String parameter,String inputData) {
         String topic = "TempData";
+
         String content = "Sensor2,building=\"101\"" + " Temperature=" + inputData + ",batterylvl=12" + "uuid=" + uuid;
         int qos = 2;
         String broker = "tcp://se2-webapp04.compute.dtu.dk:1883";
@@ -55,27 +54,29 @@ public class Emulator {
             MqttClient sampleClient = new MqttClient(broker, clientId, persistence);
             MqttConnectOptions connOpts = new MqttConnectOptions();
             connOpts.setCleanSession(true);
-            System.out.println("Connecting to broker: " + broker);
+            //System.out.println("Connecting to broker: " + broker);
             sampleClient.connect(connOpts);
-            System.out.println("Connected");
+            //System.out.println("Connected");
 
-            if (parameter == 0) {
+
+
+            if("temp".equals(parameter)){
                 content = "Sensor2,building=\"101\"" + " Temperature=" + inputData + ",batterylvl=12";
-                //content = content + ",uuid=phew";
             }
-
-            if (parameter == 1) {
+            if("CO2".equals(parameter)){
                 content = "Sensor2,building=\"101\"" + " CO2=" + inputData + ",batterylvl=12";
+
+            }
+            if("Window".equals(parameter)){
+                content = "Sensor2,building=\"101\"" + " Window=" + inputData + ",batterylvl=12";
+
             }
 
-            if (parameter == 2) {
-                content = "Sensor2,building=\"101\"" + " Window=" + inputData + ",batterylvl=12";
-            }
-            System.out.println("Publishing message: " + content);
+            //System.out.println("Publishing message: " + content);
             MqttMessage message = new MqttMessage(content.getBytes());
             message.setQos(qos);
             sampleClient.publish(topic, message);
-            System.out.println("Message published");
+            System.out.println("Messages published: " + parameter);
             sampleClient.disconnect();
 
             //sampleClient.disconnect();
@@ -113,20 +114,19 @@ public class Emulator {
                     String device = (String) messageData.get("device");
                     values = (String) messageData.get("values");
 
-                    if (device.equals("11")) {
-                        System.out.println("Emulator is setting the temperature");
-                        System.out.println("temperature: " + values);
-                        //GUI_CONTROLLER.setTemp(Integer.parseInt(values));
-                    }
-                    if (device.equals("11")) {
-                        System.out.println("Emulator is setting CO2");
-                        System.out.println("carbon dioxide: " + values);
-                        //GUI_CONTROLLER.setCarbonDioxide(Integer.parseInt(values));
-                    }
-                    if (device.equals("11")) {
-                        //GUI_CONTROLLER.setWindow(values);
-                        System.out.println("window: " + values);
-                    }
+
+                    System.out.println("Emulator is setting the temperature");
+                    System.out.println("temperature: " + values);
+                    //GUI_CONTROLLER.setTemp(Integer.parseInt(values));
+
+
+                    System.out.println("Emulator is setting CO2");
+                    System.out.println("carbon dioxide: " + values);
+                    //GUI_CONTROLLER.setCarbonDioxide(Integer.parseInt(values));
+
+
+                    //GUI_CONTROLLER.setWindow(values);
+                    System.out.println("window: " + values);
 
                     Platform.runLater(new Runnable() {
                         public void run() {
