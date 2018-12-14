@@ -16,12 +16,12 @@ import org.json.JSONObject;
 
 public class Emulator {
 
-    public static GuiController GUI_CONTROLLER;
+    public static GuiController guiController;
     public static String uuid;
     public static String values;
 
     public Emulator(GuiController guiControl) {
-        GUI_CONTROLLER = guiControl;
+        guiController = guiControl;
         uuid = generateUuid();
     }
 
@@ -38,7 +38,7 @@ public class Emulator {
     public void BackGround() throws InterruptedException {
         while (true) {
             TimeUnit.SECONDS.sleep(30);
-            GUI_CONTROLLER.handleSetButtonAction();
+            guiController.handleSetButtonAction();
         }
     }
 
@@ -118,22 +118,22 @@ public class Emulator {
 
                     System.out.println("Emulator is setting the temperature");
                     System.out.println("temperature: " + values);
-                    //GUI_CONTROLLER.setTemp(Integer.parseInt(values));
+                    //guiController.setTemp(Integer.parseInt(values));
 
 
                     System.out.println("Emulator is setting CO2");
                     System.out.println("carbon dioxide: " + values);
-                    //GUI_CONTROLLER.setCarbonDioxide(Integer.parseInt(values));
+                    //guiController.setCarbonDioxide(Integer.parseInt(values));
 
 
-                    //GUI_CONTROLLER.setWindow(values);
+                    //guiController.setWindow(values);
                     System.out.println("window: " + values);
 
                     Platform.runLater(new Runnable() {
                         public void run() {
-                            GUI_CONTROLLER.setTemp(values);
-                            //GUI_CONTROLLER.setCarbonDioxide(Integer.parseInt(values));
-                            //GUI_CONTROLLER.setWindow(values);
+                            guiController.setTemp(values);
+                            //guiController.setCarbonDioxide(Integer.parseInt(values));
+                            //guiController.setWindow(values);
                         }
                     });
                 }

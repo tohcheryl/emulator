@@ -57,13 +57,14 @@ public class GuiController {
     public void handleRegButtonAction() {
         tempDeviceId = tempId.getText();
         //setTempID(tempDeviceId);
-        Emulator.registerDevice("hello", "sunometer", tempDeviceId, "phew");
+        Emulator.registerDevice("hello", "sunometer", tempDeviceId, Emulator.uuid);
 
         carbonDioxideDeviceId = carbonDioxideId.getText();
-        setCarbonDioxideID(carbonDioxideDeviceId);
+        Emulator.registerDevice("hello", "sunometer", carbonDioxideDeviceId, Emulator.uuid);
+        //Emula
 
         windowDeviceId = windowId.getText();
-        setWindowID(windowDeviceId);
+        Emulator.registerDevice("hello", "sunometer", windowDeviceId, Emulator.uuid);
     }
 
 
