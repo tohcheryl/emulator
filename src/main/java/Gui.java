@@ -28,6 +28,7 @@ public class Gui extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
         emulator = new Emulator(guiController);
+        Emulator.registerPi(emulator.getUuid());
         emulator.receiveData(emulator.getUuid());
 
         Runnable r = new Runnable() {

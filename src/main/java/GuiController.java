@@ -1,7 +1,4 @@
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class GuiController {
@@ -9,9 +6,9 @@ public class GuiController {
     String carbonDioxideToSet;
     String windowStatusToSet;
 
-    String IDtemp;
-    String IDco2;
-    String IDwindow;
+    String tempDeviceId;
+    String carbonDioxideDeviceId;
+    String windowDeviceId;
 
     //1. row
     @FXML
@@ -35,21 +32,21 @@ public class GuiController {
         try {
             tempToSet = tempField.getText();
             setTemp(tempToSet);
-            Emulator.setData("temp",tempToSet);
+            Emulator.setData("temp", tempToSet);
         } catch (Exception e) {
             System.out.println(e);
         }
         try {
             carbonDioxideToSet = carbonDioxideField.getText();
             setCarbonDioxide(carbonDioxideToSet);
-            Emulator.setData("CO2",carbonDioxideToSet);
+            Emulator.setData("CO2", carbonDioxideToSet);
         } catch (Exception e) {
             System.out.println(e);
         }
         try {
             windowStatusToSet = windowField.getText();
             setWindow(windowStatusToSet);
-            Emulator.setData("Window",windowStatusToSet);
+            Emulator.setData("Window", windowStatusToSet);
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -58,26 +55,15 @@ public class GuiController {
 
     @FXML
     public void handleRegButtonAction() {
-        try {
-            IDtemp = tempId.getText();
-            System.out.println(IDtemp + "::" + tempId);
-            setTempID(IDtemp);
-        }catch (Exception e) {
-            System.out.println(e);
-        }
-        try {
-            IDco2 = carbonDioxideId.getText();
-            setCarbonDioxideID(IDco2);
-        }catch (Exception e) {
-            System.out.println(e);
-        }
-        try {
-            IDwindow = windowId.getText();
-            setWindowID(IDwindow);
-        }catch (Exception e) {
-            System.out.println(e);
-        }
-        return;
+        tempDeviceId = tempId.getText();
+        //setTempID(tempDeviceId);
+        Emulator.registerDevice("hello", "sunometer", tempDeviceId, "phew");
+
+        carbonDioxideDeviceId = carbonDioxideId.getText();
+        setCarbonDioxideID(carbonDioxideDeviceId);
+
+        windowDeviceId = windowId.getText();
+        setWindowID(windowDeviceId);
     }
 
 
@@ -85,7 +71,7 @@ public class GuiController {
         try {
             System.out.println("setting temperature");
             tempField.setText(status);
-        }catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(e);
         }
 
@@ -95,7 +81,7 @@ public class GuiController {
         try {
             System.out.println("setting carbonDioxideLevel");
             carbonDioxideField.setText(status);
-        }catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(e);
         }
     }
@@ -104,7 +90,7 @@ public class GuiController {
         try {
             System.out.println("setting window status");
             windowField.setText(status);
-        }catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(e);
         }
 
@@ -115,14 +101,14 @@ public class GuiController {
     public void setTempID(String status) {
         tempId.setText(status);
     }
+
     public void setCarbonDioxideID(String status) {
         carbonDioxideId.setText(status);
     }
+
     public void setWindowID(String status) {
         windowId.setText(status);
     }
-
-
 
 
 }

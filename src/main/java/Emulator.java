@@ -7,6 +7,7 @@ import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
 import java.io.*;
+import java.net.URLEncoder;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
@@ -175,6 +176,45 @@ public class Emulator {
         } catch (IOException io) {
             io.printStackTrace();
         }
+    }
+
+    public static void registerDevice(String label, String type, String deviceUuid, String rpiUuid) {
+        OkHttpClient client = new OkHttpClient();
+
+        MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
+        String queryString = formQueryStringForDevice(label, type, deviceUuid, rpiUuid);
+        RequestBody body = RequestBody.create(mediaType, queryString);
+        Request request = new Request.Builder()
+                .url("http://se2-webapp04.compute.dtu.dk/api/api-post-actuators.php")
+                .post(body)
+                .addHeader("Content-Type", "application/x-www-form-urlencoded")
+                .addHeader("cache-control", "no-cache")
+                .build();
+
+        try {
+            Response response = client.newCall(request).execute();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static String urlEncode(String string) {
+        String encodedString = "";
+        try {
+            encodedString = URLEncoder.encode(string, "UTF-8");
+        } catch (UnsupportedEncodingException uee) {
+            uee.printStackTrace();
+        }
+        return encodedString;
+    }
+
+    public static String formQueryStringForDevice(String label, String type, String deviceUuid, String rpiUuid) {
+        String encodedLabel = urlEncode(label);
+        String requestBodyString = "label=" + encodedLabel;
+        requestBodyString = requestBodyString + "&zwave_class_generic=" + type;
+        requestBodyString = requestBodyString + "&thingUID=" + deviceUuid;
+        requestBodyString = requestBodyString + "&serial=" + rpiUuid + "&undefined=";
+        return requestBodyString;
     }
 
 
