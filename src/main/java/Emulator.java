@@ -1,5 +1,6 @@
 
 
+import javafx.application.Platform;
 import okhttp3.*;
 
 import org.eclipse.paho.client.mqttv3.*;
@@ -8,15 +9,21 @@ import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 import java.io.*;
 import java.util.UUID;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 
 public class Emulator {
 
-    private final static String uuid = generateUuid();
-    private final static GuiController GUICONTROLLER = new GuiController();
+    private static GuiController GUI_CONTROLLER;
+    private static String uuid;
+    private static String values;
 
+    public Emulator(GuiController guiControl) {
+        GUI_CONTROLLER = guiControl;
+        uuid = generateUuid();
+    }
+
+    /*
     public static void main(String[] args) {
         String regID = "phew";
         registerPi(regID);
@@ -24,6 +31,7 @@ public class Emulator {
         //setData(0, "98");
         //setData(7);
     }
+    */
 
     public static void setData(int parameter, String inputData) {
         String topic = "TempData";
@@ -68,8 +76,12 @@ public class Emulator {
         }
     }
 
+    public String getUuid() {
+        return this.uuid;
+    }
+
     public static void receiveData(String uuid) {
-        String topic = uuid + "/#";
+        String topic = uuid + "/Commands";
         int qos = 2;
         String broker = "tcp://se2-webapp04.compute.dtu.dk:1883";
         String clientId = "24";
@@ -89,19 +101,30 @@ public class Emulator {
                     JSONObject messageData = new JSONObject(m);
 
                     String device = (String) messageData.get("device");
-                    String values = (String) messageData.get("values");
+                    values = (String) messageData.get("values");
+
                     if (device.equals("11")) {
                         System.out.println("Emulator is setting the temperature");
-                        System.out.println("values: " + values);
-                        GUICONTROLLER.setTemp(Integer.parseInt(values));
+                        System.out.println("temperature: " + values);
+                        //GUI_CONTROLLER.setTemp(Integer.parseInt(values));
                     }
                     if (device.equals("11")) {
                         System.out.println("Emulator is setting CO2");
-                        GUICONTROLLER.setCarbonDioxide(Integer.parseInt(values));
+                        System.out.println("carbon dioxide: " + values);
+                        //GUI_CONTROLLER.setCarbonDioxide(Integer.parseInt(values));
                     }
                     if (device.equals("11")) {
-                        GUICONTROLLER.setWindow(values);
+                        //GUI_CONTROLLER.setWindow(values);
+                        System.out.println("window: " + values);
                     }
+
+                    Platform.runLater(new Runnable() {
+                        public void run() {
+                            GUI_CONTROLLER.setTemp(Integer.parseInt(values));
+                            //GUI_CONTROLLER.setCarbonDioxide(Integer.parseInt(values));
+                            //GUI_CONTROLLER.setWindow(values);
+                        }
+                    });
                 }
 
                 public void deliveryComplete(IMqttDeliveryToken token) {
@@ -120,6 +143,7 @@ public class Emulator {
     public static String generateUuid() {
         String uniqueId = UUID.randomUUID().toString();
         String uuid = uniqueId.substring(0, Math.min(uniqueId.length(), 30));
+        System.out.println(uuid);
         return uuid;
     }
 

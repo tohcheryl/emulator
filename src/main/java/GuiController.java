@@ -120,7 +120,6 @@ public class GuiController {
     }
 
 
-
     public void setcurrenttempID(String status) {
         currenttempID.setText(status);
     }

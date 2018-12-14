@@ -6,6 +6,8 @@ import javafx.stage.Stage;
 
 public class Gui extends Application {
 
+    private Emulator emulator;
+
     @Override
     public void init() throws Exception {
         super.init();
@@ -16,13 +18,17 @@ public class Gui extends Application {
     public void start(Stage primaryStage) throws Exception {
         //Label label = new Label("Hello World");
         //label.setAlignment(Pos.CENTER);
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("gui.fxml"));
+        //Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("gui.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("gui.fxml"));
+        Parent root = (Parent) loader.load();
+        GuiController guiController = loader.getController();
         Scene scene = new Scene(root, 500, 350);
 
         primaryStage.setTitle("Climify Emulator");
         primaryStage.setScene(scene);
         primaryStage.show();
-        Emulator.receiveData("phew");
+        emulator = new Emulator(guiController);
+        emulator.receiveData(emulator.getUuid());
     }
 
     @Override
