@@ -120,7 +120,7 @@ public class Emulator {
 
                     Platform.runLater(new Runnable() {
                         public void run() {
-                            GUI_CONTROLLER.setTemp(Integer.parseInt(values));
+                            GUI_CONTROLLER.setTemp(values);
                             //GUI_CONTROLLER.setCarbonDioxide(Integer.parseInt(values));
                             //GUI_CONTROLLER.setWindow(values);
                         }
