@@ -42,7 +42,7 @@ public class Emulator {
         }
     }
 
-    public static void setData(String parameter,String inputData) {
+    public static void setData(String SensorID,String parameter,String inputData) {
         String topic = "TempData";
 
         String content = "Sensor2,building=\"101\"" + " Temperature=" + inputData + ",batterylvl=12" + "uuid=" + uuid;
@@ -62,14 +62,14 @@ public class Emulator {
 
 
             if("temp".equals(parameter)){
-                content = "Sensor2,building=\"101\"" + " Temperature=" + inputData + ",batterylvl=12";
+                content = SensorID+ ",building=\"303b\"" + " Temperature=" + inputData + ",batterylvl=12" + "uuid=" + uuid;
             }
             if("CO2".equals(parameter)){
-                content = "Sensor2,building=\"101\"" + " CO2=" + inputData + ",batterylvl=12";
+                content = SensorID + ",building=\"Building 324\"" + " CO2=" + inputData + ",batterylvl=12"+ "uuid=" + uuid;
 
             }
             if("Window".equals(parameter)){
-                content = "Sensor2,building=\"101\"" + " Window=" + inputData + ",batterylvl=12";
+                content = SensorID + ",building=\"324\"" + " Window=" + inputData + ",batterylvl=12"+ "uuid=" + uuid;
 
             }
 
