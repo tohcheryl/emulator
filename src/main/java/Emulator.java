@@ -144,10 +144,10 @@ public class Emulator {
     }
 
     public String generateUuid() {
-        String uuid = UUID.randomUUID().toString();
-        uuid = uuid.substring(0, Math.min(uuid.length(), 30));
-        System.out.println(uuid);
-        return uuid;
+        String uniqueId = UUID.randomUUID().toString();
+        uniqueId = uniqueId.substring(0, Math.min(uniqueId.length(), 30));
+        System.out.println(uniqueId);
+        return uniqueId;
     }
 
     public void registerPi() {
