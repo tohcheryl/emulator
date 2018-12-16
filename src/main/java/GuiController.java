@@ -2,6 +2,18 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
 public class GuiController {
+
+    private Emulator emulator;
+    private Gui gui;
+
+    public GuiController() {
+    }
+
+    public GuiController(Emulator emulator, Gui gui) {
+        this.emulator = emulator;
+        this.gui = gui;
+    }
+
     String tempToSet;
     String carbonDioxideToSet;
     String windowStatusToSet;
@@ -32,21 +44,21 @@ public class GuiController {
         try {
             tempToSet = tempField.getText();
             setTemp(tempToSet);
-            Emulator.setData(tempId.getText(),"temp", tempToSet);
+            emulator.setData(tempId.getText(),"temp", tempToSet);
         } catch (Exception e) {
             System.out.println(e);
         }
         try {
             carbonDioxideToSet = carbonDioxideField.getText();
             setCarbonDioxide(carbonDioxideToSet);
-            Emulator.setData(carbonDioxideId.getText(),"CO2", carbonDioxideToSet);
+            emulator.setData(carbonDioxideId.getText(),"CO2", carbonDioxideToSet);
         } catch (Exception e) {
             System.out.println(e);
         }
         try {
             windowStatusToSet = windowField.getText();
             setWindow(windowStatusToSet);
-            Emulator.setData(windowId.getText(),"Window", windowStatusToSet);
+            emulator.setData(windowId.getText(),"Window", windowStatusToSet);
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -57,14 +69,13 @@ public class GuiController {
     public void handleRegButtonAction() {
         tempDeviceId = tempId.getText();
         //setTempID(tempDeviceId);
-        Emulator.registerDevice("Thermostat"+tempDeviceId , "Thermostat", tempDeviceId, Emulator.uuid);
+        emulator.registerDevice("Thermostat"+tempDeviceId , "Thermostat", tempDeviceId);
 
         carbonDioxideDeviceId = carbonDioxideId.getText();
-        Emulator.registerDevice("CO2" + carbonDioxideDeviceId, "CO2", carbonDioxideDeviceId, Emulator.uuid);
-        //Emula
+        emulator.registerDevice("CO2" + carbonDioxideDeviceId, "CO2", carbonDioxideDeviceId);
 
         windowDeviceId = windowId.getText();
-        Emulator.registerDevice("Window" + windowDeviceId, "Window", windowDeviceId, Emulator.uuid);
+        emulator.registerDevice("Window" + windowDeviceId, "Window", windowDeviceId);
     }
 
 
@@ -94,22 +105,29 @@ public class GuiController {
         } catch (Exception e) {
             System.out.println(e);
         }
-
-
     }
 
-
-    public void setTempID(String status) {
-        tempId.setText(status);
+    private void setEmulator() {
+        if (this.emulator == null) {
+            this.emulator = new Emulator(this);
+        }
     }
 
-    public void setCarbonDioxideID(String status) {
-        carbonDioxideId.setText(status);
+    public Emulator getEmulator() {
+        return this.emulator;
     }
 
-    public void setWindowID(String status) {
-        windowId.setText(status);
+    public void setGui(Gui gui) {
+        this.gui = gui;
     }
 
+    private void startEmulator() {
+        emulator.registerPi();
+        emulator.receiveData();
+    }
 
+    public void start() {
+        setEmulator();
+        startEmulator();
+    }
 }

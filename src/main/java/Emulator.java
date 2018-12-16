@@ -1,5 +1,3 @@
-
-
 import javafx.application.Platform;
 import okhttp3.*;
 
@@ -10,39 +8,34 @@ import java.io.*;
 import java.net.URLEncoder;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.json.JSONObject;
 
 
 public class Emulator {
 
-    public static GuiController guiController;
-    public static String uuid;
-    public static String values;
+    private GuiController guiController;
+    private String uuid;
+    private String values;
+
+    private static Logger logger = Logger.getLogger(OkHttpClient.class.getName());
 
     public Emulator(GuiController guiControl) {
+        logger.setLevel(Level.FINE);
         guiController = guiControl;
         uuid = generateUuid();
     }
 
-    /*
-    public static void main(String[] args) {
-        String regID = "phew";
-        registerPi(regID);
-        receiveData(regID);
-        //setData(0, "98");
-        //setData(7);
-    }
-    */
-
-    public void BackGround() throws InterruptedException {
+    public void background() throws InterruptedException {
         while (true) {
             TimeUnit.SECONDS.sleep(30);
             guiController.handleSetButtonAction();
         }
     }
 
-    public static void setData(String SensorID,String parameter,String inputData) {
+    public void setData(String SensorID, String parameter, String inputData) {
         String topic = "TempData";
 
         String content = "Sensor2,building=\"101\"" + " Temperature=" + inputData + ",batterylvl=12" + "uuid=" + uuid;
@@ -52,33 +45,32 @@ public class Emulator {
         MemoryPersistence persistence = new MemoryPersistence();
 
         try {
-            MqttClient sampleClient = new MqttClient(broker, clientId, persistence);
+            MqttClient client = new MqttClient(broker, clientId, persistence);
             MqttConnectOptions connOpts = new MqttConnectOptions();
             connOpts.setCleanSession(true);
             //System.out.println("Connecting to broker: " + broker);
-            sampleClient.connect(connOpts);
+            client.connect(connOpts);
             //System.out.println("Connected");
 
 
-
-            if("temp".equals(parameter)){
-                content = SensorID+ ",building=\"303b\"" + " Temperature=" + inputData + ",batterylvl=12" + "uuid=" + uuid;
+            if ("temp".equals(parameter)) {
+                content = SensorID + ",building=\"303b\"" + " Temperature=" + inputData + ",batterylvl=12" + "uuid=" + uuid;
             }
-            if("CO2".equals(parameter)){
-                content = SensorID + ",building=\"Building 324\"" + " CO2=" + inputData + ",batterylvl=12"+ "uuid=" + uuid;
+            if ("CO2".equals(parameter)) {
+                content = SensorID + ",building=\"Building 324\"" + " CO2=" + inputData + ",batterylvl=12" + "uuid=" + uuid;
 
             }
-            if("Window".equals(parameter)){
-                content = SensorID + ",building=\"324\"" + " Window=" + inputData + ",batterylvl=12"+ "uuid=" + uuid;
+            if ("Window".equals(parameter)) {
+                content = SensorID + ",building=\"324\"" + " Window=" + inputData + ",batterylvl=12" + "uuid=" + uuid;
 
             }
 
             //System.out.println("Publishing message: " + content);
             MqttMessage message = new MqttMessage(content.getBytes());
             message.setQos(qos);
-            sampleClient.publish(topic, message);
+            client.publish(topic, message);
             System.out.println("Messages published: " + parameter);
-            sampleClient.disconnect();
+            client.disconnect();
 
             //sampleClient.disconnect();
             //System.out.println("Disconnected");
@@ -92,7 +84,7 @@ public class Emulator {
         return this.uuid;
     }
 
-    public static void receiveData(String uuid) {
+    public void receiveData() {
         String topic = uuid + "/Commands";
         int qos = 2;
         String broker = "tcp://se2-webapp04.compute.dtu.dk:1883";
@@ -151,14 +143,14 @@ public class Emulator {
         }
     }
 
-    public static String generateUuid() {
-        String uniqueId = UUID.randomUUID().toString();
-        String uuid = uniqueId.substring(0, Math.min(uniqueId.length(), 30));
+    public String generateUuid() {
+        String uuid = UUID.randomUUID().toString();
+        uuid = uuid.substring(0, Math.min(uuid.length(), 30));
         System.out.println(uuid);
         return uuid;
     }
 
-    public static void registerPi(String uuid) {
+    public void registerPi() {
         OkHttpClient client = new OkHttpClient();
 
         MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
@@ -178,11 +170,11 @@ public class Emulator {
         }
     }
 
-    public static void registerDevice(String label, String type, String deviceUuid, String rpiUuid) {
+    public void registerDevice(String label, String type, String deviceUuid) {
         OkHttpClient client = new OkHttpClient();
 
         MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
-        String queryString = formQueryStringForDevice(label, type, deviceUuid, rpiUuid);
+        String queryString = formQueryStringForDevice(label, type, deviceUuid);
         RequestBody body = RequestBody.create(mediaType, queryString);
         Request request = new Request.Builder()
                 .url("http://se2-webapp04.compute.dtu.dk/api/api-post-actuators.php")
@@ -198,7 +190,7 @@ public class Emulator {
         }
     }
 
-    public static String urlEncode(String string) {
+    public String urlEncode(String string) {
         String encodedString = "";
         try {
             encodedString = URLEncoder.encode(string, "UTF-8");
@@ -208,17 +200,17 @@ public class Emulator {
         return encodedString;
     }
 
-    public static String formQueryStringForDevice(String label, String type, String deviceUuid, String rpiUuid) {
+    public String formQueryStringForDevice(String label, String type, String deviceUuid) {
         String encodedLabel = urlEncode(label);
         String requestBodyString = "label=" + encodedLabel;
         requestBodyString = requestBodyString + "&zwave_class_generic=" + type;
         requestBodyString = requestBodyString + "&thingUID=" + deviceUuid;
-        requestBodyString = requestBodyString + "&serial=" + rpiUuid + "&undefined=";
+        requestBodyString = requestBodyString + "&serial=" + uuid + "&undefined=";
         return requestBodyString;
     }
 
 
-    public static void printErrorMessages(MqttException me) {
+    public void printErrorMessages(MqttException me) {
         System.out.println("reason " + me.getReasonCode());
         System.out.println("msg " + me.getMessage());
         System.out.println("loc " + me.getLocalizedMessage());
