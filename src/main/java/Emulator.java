@@ -168,6 +168,7 @@ public class Emulator {
         try {
             Response response = client.newCall(request).execute();
             System.out.println(response.toString());
+            response.body().close();
         } catch (IOException io) {
             io.printStackTrace();
         }
