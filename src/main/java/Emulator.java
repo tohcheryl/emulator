@@ -189,6 +189,7 @@ public class Emulator {
 
         try {
             Response response = client.newCall(request).execute();
+            response.body().close();
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -3,9 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="75d1a1e7-a623-42ee-949f-4845b842d276" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Emulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Emulator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Gui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GuiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GuiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Emulator$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Emulator$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Emulator$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Emulator$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Emulator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Emulator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Gui$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Gui$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Gui.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Gui.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GuiController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GuiController.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -17,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/GuiController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="55" selection-start-line="4" selection-start-column="55" selection-end-line="4" selection-end-column="55" />
+            <state>
+              <caret line="69" column="5" lean-forward="true" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3055#3056#0" expanded="true" />
@@ -33,16 +36,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Emulator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="11" lean-forward="true" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="55" />
+            <state relative-caret-position="-383">
+              <caret line="127" column="25" selection-start-line="127" selection-start-column="25" selection-end-line="127" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2813#2814#0" expanded="true" />
                 <element signature="e#2845#2846#0" expanded="true" />
-                <element signature="e#4472#4790#0" expanded="true" />
                 <element signature="e#4789#4790#0" expanded="true" />
               </folding>
             </state>
@@ -71,8 +73,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Gui.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="170">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#985#1243#0" expanded="true" />
@@ -111,9 +113,9 @@
         <option value="$PROJECT_DIR$/src/main/java/ReceiveCommand.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/gui.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/Emulator.java" />
         <option value="$PROJECT_DIR$/src/main/java/GuiController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Gui.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Emulator.java" />
       </list>
     </option>
   </component>
@@ -278,12 +280,12 @@
       <workItem from="1544794205370" duration="1564000" />
       <workItem from="1544812297776" duration="722000" />
       <workItem from="1544815988021" duration="3070000" />
-      <workItem from="1545346270723" duration="992000" />
+      <workItem from="1545346270723" duration="3454000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60238000" />
+    <option name="totallyTimeSpent" value="62700000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -296,7 +298,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.33927125" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -307,7 +308,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3285968" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.24156305" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24156305" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39964476" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -373,8 +374,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Gui.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="170">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#985#1243#0" expanded="true" />
@@ -383,30 +384,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Emulator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="11" lean-forward="true" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2813#2814#0" expanded="true" />
-            <element signature="e#2845#2846#0" expanded="true" />
-            <element signature="e#4472#4790#0" expanded="true" />
-            <element signature="e#4789#4790#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/GuiController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="55" selection-start-line="4" selection-start-column="55" selection-end-line="4" selection-end-column="55" />
+        <state>
+          <caret line="69" column="5" lean-forward="true" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3055#3056#0" expanded="true" />
             <element signature="e#3091#3092#0" expanded="true" />
             <element signature="e#3126#3127#0" expanded="true" />
             <element signature="e#3156#3157#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Emulator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-383">
+          <caret line="127" column="25" selection-start-line="127" selection-start-column="25" selection-end-line="127" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2813#2814#0" expanded="true" />
+            <element signature="e#2845#2846#0" expanded="true" />
+            <element signature="e#4789#4790#0" expanded="true" />
           </folding>
         </state>
       </provider>
