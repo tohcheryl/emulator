@@ -4,6 +4,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * @author Kristian Krarup S144122 & Cheryl Toh S181611
+ */
+
 public class Gui extends Application {
 
     private static final GuiController GUI_CONTROLLER = new GuiController();

@@ -1,6 +1,10 @@
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
+/**
+ * @author Kristian Krarup S144122 & Cheryl Toh S181611
+ */
+
 public class GuiController {
 
     private Emulator emulator;

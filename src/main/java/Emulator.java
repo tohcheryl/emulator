@@ -13,6 +13,9 @@ import java.util.logging.Logger;
 
 import org.json.JSONObject;
 
+/**
+ * @author Kristian Krarup S144122 & Cheryl Toh S181611
+ */
 
 public class Emulator {
 
