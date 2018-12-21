@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="75d1a1e7-a623-42ee-949f-4845b842d276" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/EmulatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Emulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Emulator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GuiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GuiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Emulator$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Emulator$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Emulator$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Emulator$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Emulator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Emulator.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -15,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/GuiController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="62" column="32" lean-forward="true" selection-start-line="62" selection-start-column="32" selection-end-line="62" selection-end-column="32" />
+            <state relative-caret-position="221">
+              <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -30,17 +35,31 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Emulator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2227">
-              <caret line="146" column="38" lean-forward="true" selection-start-line="146" selection-start-column="38" selection-end-line="146" selection-end-column="38" />
+            <state relative-caret-position="-570">
+              <caret line="81" column="37" selection-start-line="81" selection-start-column="27" selection-end-line="81" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1022#1023#0" expanded="true" />
+                <element signature="e#1041#1042#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/EmulatorTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="39" column="119" selection-start-line="39" selection-start-column="119" selection-end-line="39" selection-end-column="119" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ReceiveCommand.java">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+            <state relative-caret-position="544">
+              <caret line="32" column="21" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -48,8 +67,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/gui.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="45" column="54" selection-start-line="45" selection-start-column="54" selection-end-line="45" selection-end-column="54" />
+            <state relative-caret-position="187">
+              <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
             </state>
           </provider>
           <provider editor-type-id="JavaFX-Scene-Builder" />
@@ -58,8 +77,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Gui.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="29" column="47" lean-forward="true" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
+            <state relative-caret-position="459">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -75,12 +94,14 @@
         <option value="JavaFXApplication" />
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>Current</find>
+      <find>unique</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -92,12 +113,13 @@
         <option value="$PROJECT_DIR$/src/main/java/guii.fxml" />
         <option value="$PROJECT_DIR$/src/main/javafx/gui.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/gui.fxml" />
-        <option value="$PROJECT_DIR$/src/main/resources/gui.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/ReceiveCommand.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/Gui.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Emulator.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/gui.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/GuiController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Gui.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/Emulator.java" />
+        <option value="$PROJECT_DIR$/src/test/java/EmulatorTest.java" />
       </list>
     </option>
   </component>
@@ -120,6 +142,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -154,19 +177,31 @@
             </path>
             <path>
               <item name="emulator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="emulator" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="emulator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="emulator" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="emulator" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544819121560" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545383881207" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -175,6 +210,12 @@
     <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Cheryl Toh\Desktop\02162 Software Engineering 2\emulator\src\main\resources" />
       <recent name="C:\Users\Cheryl Toh\Desktop\02162 Software Engineering 2\emulator\src\main\java" />
@@ -193,14 +234,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Gui">
-    <configuration name="Emulator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Emulator" />
-      <module name="emulator" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.EmulatorTest">
     <configuration name="Gui" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Gui" />
       <module name="emulator" />
@@ -208,23 +242,58 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReceiveCommand" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ReceiveCommand" />
+    <configuration name="EmulatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="emulator" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="EmulatorTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmulatorTest.formQueryStringForDevice" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="emulator" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="EmulatorTest" />
+      <option name="METHOD_NAME" value="formQueryStringForDevice" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmulatorTest.getUuid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="emulator" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="EmulatorTest" />
+      <option name="METHOD_NAME" value="getUuid" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmulatorTest.urlEncode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="emulator" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="EmulatorTest" />
+      <option name="METHOD_NAME" value="urlEncode" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Emulator" />
       <item itemvalue="Application.Gui" />
-      <item itemvalue="Application.ReceiveCommand" />
+      <item itemvalue="JUnit.EmulatorTest.getUuid" />
+      <item itemvalue="JUnit.EmulatorTest.urlEncode" />
+      <item itemvalue="JUnit.EmulatorTest.formQueryStringForDevice" />
+      <item itemvalue="JUnit.EmulatorTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.EmulatorTest" />
         <item itemvalue="Application.Gui" />
-        <item itemvalue="Application.Emulator" />
-        <item itemvalue="Application.ReceiveCommand" />
+        <item itemvalue="JUnit.EmulatorTest.formQueryStringForDevice" />
+        <item itemvalue="JUnit.EmulatorTest.urlEncode" />
+        <item itemvalue="JUnit.EmulatorTest.getUuid" />
       </list>
     </recent_temporary>
   </component>
@@ -251,11 +320,39 @@
       <workItem from="1544794205370" duration="1564000" />
       <workItem from="1544812297776" duration="722000" />
       <workItem from="1544815988021" duration="3070000" />
+      <workItem from="1545346270723" duration="3852000" />
+      <workItem from="1545381182053" duration="2480000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="EmulatorTest_getUuid - 2018.12.21 at 09h 49m 22s.xml">
+      <configuration name="EmulatorTest.getUuid" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EmulatorTest_urlEncode - 2018.12.21 at 09h 57m 11s.xml">
+      <configuration name="EmulatorTest.urlEncode" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EmulatorTest_urlEncode - 2018.12.21 at 09h 57m 49s.xml">
+      <configuration name="EmulatorTest.urlEncode" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EmulatorTest_urlEncode - 2018.12.21 at 09h 58m 12s.xml">
+      <configuration name="EmulatorTest.urlEncode" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EmulatorTest_urlEncode - 2018.12.21 at 09h 59m 11s.xml">
+      <configuration name="EmulatorTest.urlEncode" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EmulatorTest_formQueryStringForDevice - 2018.12.21 at 10h 03m 29s.xml">
+      <configuration name="EmulatorTest.formQueryStringForDevice" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EmulatorTest_formQueryStringForDevice - 2018.12.21 at 10h 04m 45s.xml">
+      <configuration name="EmulatorTest.formQueryStringForDevice" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EmulatorTest_formQueryStringForDevice - 2018.12.21 at 10h 05m 59s.xml">
+      <configuration name="EmulatorTest.formQueryStringForDevice" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53774000" />
+    <option name="totallyTimeSpent" value="65578000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -270,7 +367,7 @@
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31093118" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.34493926" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -288,7 +385,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3285968" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.3285968" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.3285968" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3285968" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24939272" />
@@ -300,37 +397,6 @@
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
     </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27611336" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3285968" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39964476" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.3285968" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" visible="true" weight="0.24939272" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven" order="6" />
-      <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -349,52 +415,67 @@
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/fxml/FXMLLoader.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/json/json/20180130/json-20180130.jar!/org/json/JSONObject.class" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/net/URI.java" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ReceiveCommand.java" />
+    <entry file="file://$PROJECT_DIR$/target/classes/Gui.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+        <state>
+          <folding>
+            <element signature="e#0#1629#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/gui.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="45" column="54" selection-start-line="45" selection-start-column="54" selection-end-line="45" selection-end-column="54" />
+        <state relative-caret-position="187">
+          <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Gui.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="29" column="47" lean-forward="true" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
+        <state relative-caret-position="459">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ReceiveCommand.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Emulator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2227">
-          <caret line="146" column="38" lean-forward="true" selection-start-line="146" selection-start-column="38" selection-end-line="146" selection-end-column="38" />
+        <state relative-caret-position="544">
+          <caret line="32" column="21" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/GuiController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="62" column="32" lean-forward="true" selection-start-line="62" selection-start-column="32" selection-end-line="62" selection-end-column="32" />
+        <state relative-caret-position="221">
+          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Emulator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-570">
+          <caret line="81" column="37" selection-start-line="81" selection-start-column="27" selection-end-line="81" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1022#1023#0" expanded="true" />
+            <element signature="e#1041#1042#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/EmulatorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="39" column="119" selection-start-line="39" selection-start-column="119" selection-end-line="39" selection-end-column="119" />
         </state>
       </provider>
     </entry>
