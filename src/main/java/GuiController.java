@@ -1,6 +1,6 @@
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
-//@Author: Kristian Krarup and Cheryl Toh
+
 public class GuiController {
     String tempToSet;
     String carbonDioxideToSet;
