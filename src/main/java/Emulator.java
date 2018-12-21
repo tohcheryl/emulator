@@ -38,6 +38,10 @@ public class Emulator {
         }
     }
 
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
     public void setData(String SensorID, String parameter, String inputData) {
         String topic = "TempData";
 
