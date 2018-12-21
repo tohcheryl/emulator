@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.json.JSONObject;
 
-
+//@Author: Kristian Krarup and Cheryl Toh
 public class Emulator {
 
     public static GuiController guiController;
